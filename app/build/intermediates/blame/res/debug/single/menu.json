@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/Sam/Documents/MySimpleTweets/app/build/intermediates/res/merged/debug/menu/login.xml",
+        "source": "/Users/Sam/Documents/MySimpleTweets/app/src/main/res/menu/login.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/MySimpleTweets/app/build/intermediates/res/merged/debug/menu/login.xml",
+        "source": "/Users/Sam/Documents/tweet/MySimpleTweets/app/src/main/res/menu/login.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/menu/login.xml",
+        "source": "/Users/Sam/Documents/tweet/app/src/main/res/menu/login.xml"
+    }
+]
