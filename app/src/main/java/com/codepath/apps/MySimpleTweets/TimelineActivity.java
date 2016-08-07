@@ -2,9 +2,9 @@ package com.codepath.apps.MySimpleTweets;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.ListView;
-import android.widget.Toast;
 
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -14,6 +14,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
 public class TimelineActivity extends AppCompatActivity {
@@ -21,20 +23,21 @@ public class TimelineActivity extends AppCompatActivity {
     private TwitterClient client;
     private ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
-    private ListView lvTweets;
+    //private ListView lvTweets;
+    @BindView(R.id.rvTweets) RecyclerView rvTweets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
-        //Find the listview
-        lvTweets = (ListView) findViewById(R.id.lvTweets);
+        ButterKnife.bind(this);
         //Create the arraylist (data source)
         tweets = new ArrayList<>();
         //Construct the adapter from data source
         aTweets = new TweetsArrayAdapter(this, tweets);
         //Connect adapter to list view
-        lvTweets.setAdapter(aTweets);
+        rvTweets.setAdapter(aTweets);
+        rvTweets.setLayoutManager(new LinearLayoutManager(this));
         //Get the client
         client = TwitterApplication.getRestClient(); //singleton client
         populateTimeline();
@@ -49,15 +52,16 @@ public class TimelineActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
                 //super.onSuccess(statusCode, headers, response);
-                Log.d("DEBUG", response.toString());
+                //Log.d("DEBUG", response.toString());
 
-                Toast.makeText(TimelineActivity.this, "onSuccess", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(TimelineActivity.this, "onSuccess", Toast.LENGTH_SHORT).show();
 
                 // DESERIALIZE JSON
                 // CREATE MODELS AND ADD THEM TO THE ADAPTER
                 // LOAD THE MODEL DATA INTO LISTVIEW
-                aTweets.addAll(Tweet.fromJSONArray(response));
-                Log.d("DEBUG", aTweets.toString());
+                tweets.addAll(Tweet.fromJSONArray(response));
+                aTweets.notifyDataSetChanged();
+                //Log.d("DEBUG", aTweets.toString());
             }
 
 
