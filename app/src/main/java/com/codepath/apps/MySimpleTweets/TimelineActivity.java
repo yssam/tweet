@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.codepath.apps.MySimpleTweets.models.EndlessRecyclerViewScrollListener;
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -30,9 +31,13 @@ public class TimelineActivity extends AppCompatActivity{
     //private ListView lvTweets;
     @BindView(R.id.rvTweets) RecyclerView rvTweets;
     @BindView(R.id.fabNewPost) FloatingActionButton myFab;
+    private long maxId;
+    private long sinceId;
+    private boolean first = true;
 
     NewPostFragment newPostFragment;
     FragmentTransaction ft;
+    LinearLayoutManager linearLayoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,13 +51,13 @@ public class TimelineActivity extends AppCompatActivity{
         aTweets = new TweetsArrayAdapter(this, tweets);
         //Connect adapter to list view
         rvTweets.setAdapter(aTweets);
-        rvTweets.setLayoutManager(new LinearLayoutManager(this));
+        linearLayoutManager = new LinearLayoutManager(this);
+        rvTweets.setLayoutManager(linearLayoutManager);
         //Get the client
         client = TwitterApplication.getRestClient(); //singleton client
-        populateTimeline();
+        populateTimeline(0);
         setFabListener();
-
-
+        setScrollListener();
     }
 
     private void setFabListener() {
@@ -61,6 +66,17 @@ public class TimelineActivity extends AppCompatActivity{
                 //Toast.makeText(TimelineActivity.this, "Post new Tweet!", Toast.LENGTH_SHORT);
                 //System.out.println("Post new Tweet!");
                 setFragments();
+            }
+        });
+    }
+
+    private void setScrollListener() {
+        rvTweets.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount) {
+                // Triggered only when new data needs to be appended to the list
+                // Add whatever code is needed to append new items to the bottom of the list
+                populateTimeline(page);
             }
         });
     }
@@ -75,21 +91,30 @@ public class TimelineActivity extends AppCompatActivity{
 
     //Send an API request to get the timeline json
     //Fill the listview by creating the tweet objects from the json
-    private void populateTimeline() {
-        client.getHomeTimeline(new JsonHttpResponseHandler() {
+    private void populateTimeline(int page) {
+        client.getHomeTimeline(first, maxId, sinceId, page, new JsonHttpResponseHandler() {
             //SUCCESS
 
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray json) {
-                //super.onSuccess(statusCode, headers, response);
-                //Log.d("DEBUG", response.toString());
-
-                //Toast.makeText(TimelineActivity.this, "onSuccess", Toast.LENGTH_SHORT).show();
-
                 // DESERIALIZE JSON
                 // CREATE MODELS AND ADD THEM TO THE ADAPTER
                 // LOAD THE MODEL DATA INTO LISTVIEW
-                tweets.addAll(Tweet.fromJSONArray(json));
+
+                ArrayList<Tweet> tmpTweets = new ArrayList<Tweet>(Tweet.fromJSONArray(json));
+                if(first) {
+                    sinceId = tmpTweets.get(0).getUid();
+                    first = false;
+                }
+                try {
+                    maxId = tmpTweets.get(tmpTweets.size() - 1).getUid();
+                    System.out.println(maxId);
+                }catch(Exception e)
+                {
+                    System.out.println(e.toString());
+                }
+                tweets.addAll(tmpTweets);
+
                 aTweets.notifyDataSetChanged();
                 //Log.d("DEBUG", aTweets.toString());
             }
