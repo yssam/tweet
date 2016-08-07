@@ -24,8 +24,8 @@ import org.scribe.builder.api.TwitterApi;
 public class TwitterClient extends OAuthBaseClient {
 	public static final Class<? extends Api> REST_API_CLASS = TwitterApi.class; // Change this
 	public static final String REST_URL = "https://api.twitter.com/1.1"; // Change this, base API URL
-	public static final String REST_CONSUMER_KEY = "dwCIChFXMfXyGjxvzIp1rWUDq";       // Change this
-	public static final String REST_CONSUMER_SECRET = "gRxX3XQa2COebKm3rt8CSxvibMKbfF8SLStTRf4y6mSndDybhe"; // Change this
+	public static final String REST_CONSUMER_KEY = "3oiWRwiAyNguu2HSqeuiRp6vl";       // Change this
+	public static final String REST_CONSUMER_SECRET = "YqsLf75i3aOImpzqHI0JUwMawuOYXancViP87iO6dJdObT8gf3"; // Change this
 	public static final String REST_CALLBACK_URL = "oauth://YSCTweetsApp"; // Change this (here and in manifest)
 
 	public TwitterClient(Context context) {
@@ -54,6 +54,13 @@ public class TwitterClient extends OAuthBaseClient {
 	}
 
 	//COMPOSE TWEET
+	public void postNewTweet(String content, AsyncHttpResponseHandler handler){
+		String apiUrl = getApiUrl("statuses/update.json");
+		//Spicify the params
+		RequestParams params = new RequestParams();
+		params.put("status", content);
+		getClient().post(apiUrl, params, handler);
+	}
 
 
 	/* 1. Define the endpoint URL with getApiUrl and pass a relative path to the endpoint

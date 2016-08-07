@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -79,7 +80,7 @@ public class TimelineActivity extends AppCompatActivity{
             //SUCCESS
 
             @Override
-            public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
+            public void onSuccess(int statusCode, Header[] headers, JSONArray json) {
                 //super.onSuccess(statusCode, headers, response);
                 //Log.d("DEBUG", response.toString());
 
@@ -88,7 +89,7 @@ public class TimelineActivity extends AppCompatActivity{
                 // DESERIALIZE JSON
                 // CREATE MODELS AND ADD THEM TO THE ADAPTER
                 // LOAD THE MODEL DATA INTO LISTVIEW
-                tweets.addAll(Tweet.fromJSONArray(response));
+                tweets.addAll(Tweet.fromJSONArray(json));
                 aTweets.notifyDataSetChanged();
                 //Log.d("DEBUG", aTweets.toString());
             }
@@ -111,6 +112,23 @@ public class TimelineActivity extends AppCompatActivity{
         //Log.d("DEBUG", "Post button sent");
         newPostFragment.closeFragment();
         //Toast.makeText(this, newPostFragment.getPostContent(), Toast.LENGTH_SHORT).show();
+        String PostContent = newPostFragment.getPostContent();
+        populateNewTweet(PostContent);
+    }
+
+    private void populateNewTweet(String postContent) {
+        client.postNewTweet(postContent, new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject json) {
+                Toast.makeText(TimelineActivity.this, "PostonSuccess", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+                Log.d("DEBUG", errorResponse.toString());
+            }
+        });
     }
 
 }
