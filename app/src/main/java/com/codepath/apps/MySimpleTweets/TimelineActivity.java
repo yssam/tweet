@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.codepath.apps.MySimpleTweets.Adapter.TweetsArrayAdapter;
 import com.codepath.apps.MySimpleTweets.models.EndlessRecyclerViewScrollListener;
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -32,9 +33,9 @@ public class TimelineActivity extends AppCompatActivity{
     //private ListView lvTweets;
     @BindView(R.id.rvTweets) RecyclerView rvTweets;
     @BindView(R.id.fabNewPost) FloatingActionButton myFab;
-    private long maxId;
-    private long sinceId;
-    private long localSinceId = -1;
+    private long MinId = 1;
+    private long LargeId = 1;
+    private long localLargeId = 1;
     private boolean first = true;
 
     NewPostFragment newPostFragment;
@@ -59,10 +60,10 @@ public class TimelineActivity extends AppCompatActivity{
         rvTweets.setLayoutManager(linearLayoutManager);
         //Get the client
         client = TwitterApplication.getRestClient(); //singleton client
-        populateTimeline(0);
         setFabListener();
         setScrollListener();
         setSwapListener();
+        populateTimeline(0);
     }
 
     private void setFabListener() {
@@ -119,7 +120,8 @@ public class TimelineActivity extends AppCompatActivity{
     //Send an API request to get the timeline json
     //Fill the listview by creating the tweet objects from the json
     private void populateTimeline(final int page) {
-        client.getHomeTimeline(maxId, sinceId, page, new JsonHttpResponseHandler() {
+        System.out.println("page="+page+" MinId="+MinId+" SId="+LargeId);
+        client.getHomeTimeline(MinId, LargeId, page, new JsonHttpResponseHandler() {
             //SUCCESS
 
             @Override
@@ -130,15 +132,15 @@ public class TimelineActivity extends AppCompatActivity{
 
                 ArrayList<Tweet> tmpTweets = new ArrayList<Tweet>(Tweet.fromJSONArray(json));
                 for(Tweet t:tmpTweets){
-                    localSinceId = Math.max(localSinceId, t.getUid());
-                    maxId = (page==0)? t.getUid():Math.min(maxId, t.getUid());
+                    localLargeId = Math.max(localLargeId, t.getUid());
+                    MinId = (page==0)? t.getUid():Math.min(MinId, t.getUid());
                 }
 
                 if(first) {
-                    sinceId = localSinceId;
+                    LargeId = localLargeId;
                     first = false;
                 }
-                else if(maxId <= sinceId) sinceId = localSinceId;
+                else if(MinId <= LargeId) LargeId = localLargeId;
                 tweets.addAll(tmpTweets);
 
                 aTweets.notifyDataSetChanged();

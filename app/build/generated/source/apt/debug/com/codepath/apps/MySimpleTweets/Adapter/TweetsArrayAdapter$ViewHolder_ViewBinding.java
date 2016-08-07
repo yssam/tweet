@@ -1,13 +1,11 @@
 // Generated code from Butter Knife. Do not modify!
-package com.codepath.apps.MySimpleTweets;
+package com.codepath.apps.MySimpleTweets.Adapter;
 
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.codepath.apps.MySimpleTweets.Adapter.TweetsArrayAdapter;
-
 import butterknife.Unbinder;
 import butterknife.internal.Finder;
+import com.codepath.apps.MySimpleTweets.R;
 import java.lang.IllegalStateException;
 import java.lang.Object;
 import java.lang.Override;

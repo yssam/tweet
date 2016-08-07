@@ -1,7 +1,5 @@
 // Generated code from Butter Knife. Do not modify!
-package com.codepath.apps.MySimpleTweets;
-
-import com.codepath.apps.MySimpleTweets.Adapter.TweetsArrayAdapter;
+package com.codepath.apps.MySimpleTweets.Adapter;
 
 import butterknife.Unbinder;
 import butterknife.internal.Finder;
