@@ -192,6 +192,10 @@
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_media_action.xml"
     },
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/layout/fragment_new_post.xml",
+        "source": "/Users/Sam/Documents/tweet/app/src/main/res/layout/fragment_new_post.xml"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/layout/design_navigation_item.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/layout/design_navigation_item.xml"
     },

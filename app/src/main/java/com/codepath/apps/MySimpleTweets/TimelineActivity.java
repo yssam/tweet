@@ -1,10 +1,13 @@
 package com.codepath.apps.MySimpleTweets;
 
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -18,19 +21,24 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
-public class TimelineActivity extends AppCompatActivity {
+public class TimelineActivity extends AppCompatActivity{
 
     private TwitterClient client;
     private ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
     //private ListView lvTweets;
     @BindView(R.id.rvTweets) RecyclerView rvTweets;
+    @BindView(R.id.fabNewPost) FloatingActionButton myFab;
+
+    NewPostFragment newPostFragment;
+    FragmentTransaction ft;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
         ButterKnife.bind(this);
+
         //Create the arraylist (data source)
         tweets = new ArrayList<>();
         //Construct the adapter from data source
@@ -41,6 +49,27 @@ public class TimelineActivity extends AppCompatActivity {
         //Get the client
         client = TwitterApplication.getRestClient(); //singleton client
         populateTimeline();
+        setFabListener();
+
+
+    }
+
+    private void setFabListener() {
+        myFab.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Toast.makeText(TimelineActivity.this, "Post new Tweet!", Toast.LENGTH_SHORT);
+                //System.out.println("Post new Tweet!");
+                setFragments();
+            }
+        });
+    }
+
+    private void setFragments() {
+        ft = getSupportFragmentManager().beginTransaction();
+        newPostFragment = NewPostFragment.newInstance();
+        ft.replace(R.id.fmNewPost, newPostFragment);
+        ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+        ft.commit();
     }
 
     //Send an API request to get the timeline json
@@ -75,4 +104,13 @@ public class TimelineActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+    public void onPostClick(View v){
+        //Log.d("DEBUG", "Post button sent");
+        newPostFragment.closeFragment();
+        //Toast.makeText(this, newPostFragment.getPostContent(), Toast.LENGTH_SHORT).show();
+    }
+
 }
