@@ -129,7 +129,7 @@ public class TimelineActivity extends AppCompatActivity{
     //Send an API request to get the timeline json
     //Fill the listview by creating the tweet objects from the json
     private void populateTimeline(final int page) {
-        System.out.println("page="+page+" MinId="+MinId+" SId="+LargeId);
+        //System.out.println("page="+page+" MinId="+MinId+" SId="+LargeId);
         client.getHomeTimeline(MinId, LargeId, page, new JsonHttpResponseHandler() {
             //SUCCESS
 
@@ -153,7 +153,7 @@ public class TimelineActivity extends AppCompatActivity{
                 tweets.addAll(tmpTweets);
 
                 aTweets.notifyDataSetChanged();
-                Log.d("DEBUG", tweets.toString());
+                Log.d("DEBUG", json.toString());
                 swipeContainer.setRefreshing(false);
             }
 

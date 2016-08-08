@@ -9,7 +9,6 @@ import org.json.JSONObject;
 
 public class User {
     // list attributes
-    private String name;
 
     public String getProfileImageUrl() {
         return profileImageUrl;
@@ -27,6 +26,7 @@ public class User {
         return screenName;
     }
 
+    private String name;
     private long id;
     private String screenName;
     private String profileImageUrl;
@@ -37,10 +37,26 @@ public class User {
         // Extract and fill the values
         try {
             u.name = json.getString("name");
+        }catch (JSONException e) {
+            u.name = " ";
+            e.printStackTrace();
+        }
+        try {
             u.id = json.getLong("id_str");
+        } catch (JSONException e1) {
+            u.id = 0;
+            e1.printStackTrace();
+        }
+        try {
             u.screenName = json.getString("screen_name");
+        } catch (JSONException e1) {
+            u.screenName = " ";
+            e1.printStackTrace();
+        }
+        try {
             u.profileImageUrl = json.getString("profile_image_url");
         } catch (JSONException e) {
+            u.profileImageUrl = " ";
             e.printStackTrace();
         }
         // Return a user

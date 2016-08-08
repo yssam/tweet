@@ -17,9 +17,11 @@ public class TweetsArrayAdapter$ViewHolder_ViewBinding<T extends TweetsArrayAdap
     this.target = target;
 
     target.ivProfileImage = finder.findRequiredViewAsType(source, R.id.ivProfileImage, "field 'ivProfileImage'", ImageView.class);
+    target.tvName = finder.findRequiredViewAsType(source, R.id.tvName, "field 'tvName'", TextView.class);
     target.tvUserName = finder.findRequiredViewAsType(source, R.id.tvUserName, "field 'tvUserName'", TextView.class);
     target.tvBody = finder.findRequiredViewAsType(source, R.id.tvBody, "field 'tvBody'", TextView.class);
     target.tvRelativeTime = finder.findRequiredViewAsType(source, R.id.tvRelativeTime, "field 'tvRelativeTime'", TextView.class);
+    target.ivUrlImage = finder.findRequiredViewAsType(source, R.id.ivUrlImage, "field 'ivUrlImage'", ImageView.class);
   }
 
   @Override
@@ -28,9 +30,11 @@ public class TweetsArrayAdapter$ViewHolder_ViewBinding<T extends TweetsArrayAdap
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
 
     target.ivProfileImage = null;
+    target.tvName = null;
     target.tvUserName = null;
     target.tvBody = null;
     target.tvRelativeTime = null;
+    target.ivUrlImage = null;
 
     this.target = null;
   }

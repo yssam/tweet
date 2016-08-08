@@ -11,15 +11,22 @@
         android:id="@+id/ivProfileImage"
         android:cropToPadding="false"
         android:padding="5dp" />
-
     <TextView
-        android:text="Billy"
+        android:text="Name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivProfileImage"
-        android:id="@+id/tvUserName"
+        android:id="@+id/tvName"
+        android:paddingRight="5dp"
         android:textAppearance="@style/TextAppearance.AppCompat" />
+    <TextView
+        android:text="\@Billy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/tvName"
+        android:id="@+id/tvUserName"
+        android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
     <TextView
         android:text="Body"
@@ -41,4 +48,9 @@
         android:id="@+id/tvRelativeTime"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#909090"
+        android:layout_below="@id/tvRelativeTime"/>
 </RelativeLayout>

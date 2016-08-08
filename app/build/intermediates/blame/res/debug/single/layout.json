@@ -16,6 +16,10 @@
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_expanded_menu_layout.xml"
     },
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/layout/item_tweet2.xml",
+        "source": "/Users/Sam/Documents/tweet/app/src/main/res/layout/item_tweet2.xml"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/abc_search_view.xml"
     },
