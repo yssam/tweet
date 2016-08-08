@@ -98,6 +98,7 @@ public class TimelineActivity extends AppCompatActivity{
                 // Your code to refresh the list here.
                 // Make sure you call swipeContainer.setRefreshing(false)
                 // once the network request has completed successfully.
+                clearList();
                 populateTimeline(0);
             }
         });
@@ -107,6 +108,14 @@ public class TimelineActivity extends AppCompatActivity{
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
 
+    }
+
+    private void clearList() {
+        MinId = 1;
+        LargeId = 1;
+        localLargeId = 1;
+        tweets.clear();
+        aTweets.notifyDataSetChanged();
     }
 
     private void setFragments() {
@@ -169,6 +178,8 @@ public class TimelineActivity extends AppCompatActivity{
         //Toast.makeText(this, newPostFragment.getPostContent(), Toast.LENGTH_SHORT).show();
         String PostContent = newPostFragment.getPostContent();
         populateNewTweet(PostContent);
+        clearList();
+        populateTimeline(0);
     }
 
     private void populateNewTweet(String postContent) {

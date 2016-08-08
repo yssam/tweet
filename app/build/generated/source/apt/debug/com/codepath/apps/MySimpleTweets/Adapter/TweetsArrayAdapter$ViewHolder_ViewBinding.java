@@ -19,6 +19,7 @@ public class TweetsArrayAdapter$ViewHolder_ViewBinding<T extends TweetsArrayAdap
     target.ivProfileImage = finder.findRequiredViewAsType(source, R.id.ivProfileImage, "field 'ivProfileImage'", ImageView.class);
     target.tvUserName = finder.findRequiredViewAsType(source, R.id.tvUserName, "field 'tvUserName'", TextView.class);
     target.tvBody = finder.findRequiredViewAsType(source, R.id.tvBody, "field 'tvBody'", TextView.class);
+    target.tvRelativeTime = finder.findRequiredViewAsType(source, R.id.tvRelativeTime, "field 'tvRelativeTime'", TextView.class);
   }
 
   @Override
@@ -29,6 +30,7 @@ public class TweetsArrayAdapter$ViewHolder_ViewBinding<T extends TweetsArrayAdap
     target.ivProfileImage = null;
     target.tvUserName = null;
     target.tvBody = null;
+    target.tvRelativeTime = null;
 
     this.target = null;
   }

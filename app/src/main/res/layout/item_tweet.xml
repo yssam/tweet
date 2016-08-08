@@ -21,10 +21,18 @@
         android:id="@+id/tvUserName" />
 
     <TextView
-        android:text="TextView"
+        android:text="Body"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tvUserName"
         android:layout_toRightOf="@+id/ivProfileImage"
         android:id="@+id/tvBody" />
+
+    <TextView
+        android:text="Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvBody"
+        android:layout_toRightOf="@+id/ivProfileImage"
+        android:id="@+id/tvRelativeTime" />
 </RelativeLayout>
