@@ -153,7 +153,7 @@ public class TimelineActivity extends AppCompatActivity{
                 tweets.addAll(tmpTweets);
 
                 aTweets.notifyDataSetChanged();
-                //Log.d("DEBUG", aTweets.toString());
+                Log.d("DEBUG", tweets.toString());
                 swipeContainer.setRefreshing(false);
             }
 
@@ -180,6 +180,10 @@ public class TimelineActivity extends AppCompatActivity{
         populateNewTweet(PostContent);
         clearList();
         populateTimeline(0);
+    }
+
+    public void onCancelClick(View v){
+        newPostFragment.closeFragment();
     }
 
     private void populateNewTweet(String postContent) {

@@ -17,10 +17,14 @@
         android:layout_alignParentTop="true"
         android:layout_above="@+id/btnPost"
         android:textColor="#FFFFFF"
-        android:shadowColor="#33b5e5"/>
+        android:shadowColor="#33b5e5"
+        style="@android:style/Widget.AutoCompleteTextView"
+        android:hint="What's happening..."
+        android:textColorHint="#909090"/>
 
     <Button
-        android:text="Post"
+        android:text="Tweet"
+        android:drawableLeft="@drawable/ic_check_black_24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnPost"
@@ -30,10 +34,12 @@
 
     <Button
         android:text="Cancel"
+        android:drawableLeft="@drawable/ic_clear_black_24dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnCancelPost"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@id/btnPost"/>
+        android:layout_toLeftOf="@id/btnPost"
+        android:onClick="onCancelClick"/>
 
 </RelativeLayout>

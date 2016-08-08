@@ -2,5 +2,13 @@
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_border_color_black_24dp.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_border_color_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_check_black_24dp.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_check_black_24dp.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_clear_black_24dp.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_clear_black_24dp.xml"
     }
 ]

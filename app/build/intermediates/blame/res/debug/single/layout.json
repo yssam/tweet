@@ -214,5 +214,9 @@
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/layout/fragment_content.xml",
+        "source": "/Users/Sam/Documents/tweet/app/src/main/res/layout/fragment_content.xml"
     }
 ]

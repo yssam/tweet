@@ -124,6 +124,10 @@
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-mdpi-v4/abc_btn_check_to_on_mtrl_000.png"
     },
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_check_black_24dp.png",
+        "source": "/Users/Sam/Documents/tweet/app/build/generated/res/pngs/debug/drawable-mdpi/ic_check_black_24dp.png"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-mdpi-v4/abc_btn_radio_to_on_mtrl_015.png"
     },
@@ -166,6 +170,10 @@
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-mdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/ic_clear_black_24dp.png",
+        "source": "/Users/Sam/Documents/tweet/app/build/generated/res/pngs/debug/drawable-mdpi/ic_clear_black_24dp.png"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-mdpi-v4/abc_ic_star_half_black_36dp.png",

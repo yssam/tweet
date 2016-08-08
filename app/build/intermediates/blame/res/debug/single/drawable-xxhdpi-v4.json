@@ -32,6 +32,10 @@
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_check_black_24dp.png",
+        "source": "/Users/Sam/Documents/tweet/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_check_black_24dp.png"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png"
     },
@@ -50,6 +54,10 @@
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/ic_clear_black_24dp.png",
+        "source": "/Users/Sam/Documents/tweet/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_clear_black_24dp.png"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-xxhdpi-v4/abc_list_divider_mtrl_alpha.9.png",

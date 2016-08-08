@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/material_grey_850"
+    tools:context="com.codepath.apps.MySimpleTweets.ContentFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/ic_launcher"
+        android:id="@+id/ivContentProfileImage"
+        android:cropToPadding="false"
+        android:padding="5dp" />
+
+    <TextView
+        android:text="Billy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/ivContentProfileImage"
+        android:id="@+id/tvContentUserName" />
+
+    <TextView
+        android:text="Body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvContentUserName"
+        android:layout_toRightOf="@+id/ivContentProfileImage"
+        android:id="@+id/tvContentBody" />
+
+    <TextView
+        android:text="Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvContentBody"
+        android:layout_toRightOf="@+id/ivContentProfileImage"
+        android:id="@+id/tvContentRelativeTime" />
+
+</RelativeLayout>

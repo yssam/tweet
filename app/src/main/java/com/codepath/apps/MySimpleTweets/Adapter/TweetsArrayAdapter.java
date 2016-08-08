@@ -3,6 +3,7 @@ package com.codepath.apps.MySimpleTweets.Adapter;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.text.format.DateUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -109,6 +110,7 @@ public class TweetsArrayAdapter extends
             System.out.println(dateMillis + " " + System.currentTimeMillis());
             relativeDate = DateUtils.getRelativeTimeSpanString(dateMillis,
                     System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS).toString();
+            Log.d("DEBUG", Long.toString(dateMillis));
         } catch (ParseException e) {
             e.printStackTrace();
         }

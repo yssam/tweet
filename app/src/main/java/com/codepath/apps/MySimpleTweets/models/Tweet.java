@@ -18,7 +18,6 @@ public class Tweet {
     private long uid; //unique id for the tweet
     private String createAt;
     private User user;
-    private String relativeTime;
 
     public String getCreateAt() {
         return createAt;
