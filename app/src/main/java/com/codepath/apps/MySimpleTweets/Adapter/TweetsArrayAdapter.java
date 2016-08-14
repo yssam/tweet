@@ -47,7 +47,6 @@ public class TweetsArrayAdapter extends
     }
 
 
-
     @Override
     public int getItemViewType(int position) {
         if (mTweets.get(position).getMedia() == null || TextUtils.isEmpty(mTweets.get(position).getMedia().getMediaUrl())) {
@@ -56,6 +55,7 @@ public class TweetsArrayAdapter extends
             return IMAGE;
         }
     }
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
@@ -154,63 +154,6 @@ public class TweetsArrayAdapter extends
 
         return relativeDate;
     }
-    /*
-    // Usually involves inflating a layout from XML and returning the holder
-    @Override
-    public TweetsArrayAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        LayoutInflater inflater = LayoutInflater.from(context);
-
-        // Inflate the custom layout
-        View contactView = inflater.inflate(R.layout.item_tweet, parent, false);
-
-        // Return a new holder instance
-        ViewHolder viewHolder = new ViewHolder(contactView);
-        return viewHolder;
-    }
-
-    // Involves populating data into the item through holder
-    @Override
-    public void onBindViewHolder(TweetsArrayAdapter.ViewHolder viewHolder, int position) {
-        // Get the data model based on position
-        Tweet tweet = mTweets.get(position);
-
-        // Set item views based on your views and data model
-        TextView tvName = viewHolder.tvName;
-        TextView tvUserName = viewHolder.tvUserName;
-        TextView tvBody = viewHolder.tvBody;
-        TextView tvRelativeTime = viewHolder.tvRelativeTime;
-        ImageView ivProfileImage = viewHolder.ivProfileImage;
-
-        tvName.setText(tweet.getUser().getName());
-        tvUserName.setText("@" + tweet.getUser().getScreenName());
-        tvBody.setText(tweet.getBody());
-        tvRelativeTime.setText(getRelativeTimeAgo(tweet.getCreateAt()));
-        ivProfileImage.setImageResource(android.R.color.transparent); // clear out the old image for a recycled view
-        Picasso.with(getContext()).load(tweet.getUser().getProfileImageUrl()).into(ivProfileImage);
-    }
 
 
-
-
-    // getRelativeTimeAgo("Mon Apr 01 21:16:23 +0000 2014");
-    public String getRelativeTimeAgo(String rawJsonDate) {
-        String twitterFormat = "EEE MMM dd HH:mm:ss ZZZZZ yyyy";
-        SimpleDateFormat sf = new SimpleDateFormat(twitterFormat, Locale.ENGLISH);
-        sf.setLenient(true);
-
-        String relativeDate = "";
-        try {
-
-            long dateMillis = sf.parse(rawJsonDate).getTime();
-            System.out.println(dateMillis + " " + System.currentTimeMillis());
-            relativeDate = DateUtils.getRelativeTimeSpanString(dateMillis,
-                    System.currentTimeMillis(), DateUtils.SECOND_IN_MILLIS).toString();
-            //Log.d("DEBUG", Long.toString(dateMillis));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        return relativeDate;
-    }*/
 }

@@ -24,9 +24,10 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         client = TwitterApplication.getRestClient();
+        String screenName = getIntent().getStringExtra("screen_name");
 
         // get some account info
-        client.getUserInfo(new JsonHttpResponseHandler(){
+        client.getUserInfo(screenName, new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 user = User.fromJSON(response);
@@ -36,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
         // get screen name from the activity that launch this
-        String screenName = getIntent().getStringExtra("screen_name");
+
         if(savedInstanceState == null) {
             // Create the user timeline fragment
             UserTimelineFragment fragmentUserTimeline = UserTimelineFragment.newInstance(screenName);

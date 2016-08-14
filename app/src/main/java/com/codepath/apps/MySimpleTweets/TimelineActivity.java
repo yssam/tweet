@@ -8,8 +8,10 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 import com.codepath.apps.MySimpleTweets.Fragments.HomeTimelineFragment;
@@ -83,12 +85,15 @@ public class TimelineActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        Toast.makeText(this, item.toString(), Toast.LENGTH_SHORT).show();
+        Log.d("DEBUG", item.toString());
         return super.onOptionsItemSelected(item);
     }
 
     public void onProfileView(MenuItem mi) {
         // launch the profile view
         Intent i = new Intent(this, ProfileActivity.class);
+        i.putExtra("screen_name", "sam_yschu");
         startActivity(i);
     }
 
