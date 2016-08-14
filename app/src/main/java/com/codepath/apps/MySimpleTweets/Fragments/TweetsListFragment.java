@@ -15,13 +15,19 @@ import com.codepath.apps.MySimpleTweets.Adapter.TweetsArrayAdapter;
 import com.codepath.apps.MySimpleTweets.ItemClickSupport;
 import com.codepath.apps.MySimpleTweets.ProfileActivity;
 import com.codepath.apps.MySimpleTweets.R;
+import com.codepath.apps.MySimpleTweets.TwitterApplication;
+import com.codepath.apps.MySimpleTweets.TwitterClient;
 import com.codepath.apps.MySimpleTweets.models.EndlessRecyclerViewScrollListener;
 import com.codepath.apps.MySimpleTweets.models.Tweet;
+import com.loopj.android.http.JsonHttpResponseHandler;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import cz.msebera.android.httpclient.Header;
 
 /**
  * Created by Sam on 8/11/16.
@@ -32,13 +38,14 @@ public abstract class TweetsListFragment extends Fragment{
     private ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
     //private ListView lvTweets;
-    RecyclerView rvTweets;
+    @BindView(R.id.rvTweets) RecyclerView rvTweets;
     LinearLayoutManager linearLayoutManager;
     @BindView(R.id.swipeContainer) SwipeRefreshLayout swipeContainer;
     protected long MinId = 1;
     protected long LargeId = 1;
     protected long localLargeId = 1;
     protected boolean first = true;
+    protected TwitterClient client;
 
     // inflation logic
     @Nullable
@@ -46,7 +53,6 @@ public abstract class TweetsListFragment extends Fragment{
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup parent, @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_tweets_list, parent, false);
         ButterKnife.bind(this, v);
-        rvTweets = (RecyclerView) v.findViewById(R.id.rvTweets);
         rvTweets.setAdapter(aTweets);
         linearLayoutManager = new LinearLayoutManager(getActivity());
         rvTweets.setLayoutManager(linearLayoutManager);
@@ -67,6 +73,7 @@ public abstract class TweetsListFragment extends Fragment{
         //Construct the adapter from data source
         aTweets = new TweetsArrayAdapter(getActivity(), tweets);
         //Connect adapter to list view
+        client = TwitterApplication.getRestClient(); //singleton client
 
 
     }
@@ -81,6 +88,7 @@ public abstract class TweetsListFragment extends Fragment{
         localLargeId = 1;
         tweets.clear();
         adapterNotifyDataSetChanged();
+        populateTimeline(0);
     }
 
     public void adapterNotifyDataSetChanged() {
@@ -101,7 +109,6 @@ public abstract class TweetsListFragment extends Fragment{
 
       private void setSwapListener() {
         // Lookup the swipe container view
-        //swipeContainer = (SwipeRefreshLayout) getActivity().findViewById(R.id.swipeContainer);
         // Setup refresh listener which triggers new data loading
         swipeContainer.setOnRefreshListener(
                 new SwipeRefreshLayout.OnRefreshListener() {
@@ -114,7 +121,6 @@ public abstract class TweetsListFragment extends Fragment{
                 LargeId = 1;
                 localLargeId = 1;
                 clear();
-                populateTimeline(0);
             }
         });
         // Configure the refreshing colors
@@ -142,5 +148,19 @@ public abstract class TweetsListFragment extends Fragment{
                     }
                 }
         );
+    }
+
+    public void populateNewTweet(String postContent) {
+        client.postNewTweet(postContent, new JsonHttpResponseHandler(){
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+            }
+        });
     }
 }

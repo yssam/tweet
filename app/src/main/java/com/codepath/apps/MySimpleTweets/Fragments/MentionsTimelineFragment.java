@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
-import com.codepath.apps.MySimpleTweets.TwitterApplication;
-import com.codepath.apps.MySimpleTweets.TwitterClient;
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -21,15 +19,11 @@ import cz.msebera.android.httpclient.Header;
  */
 
 public class MentionsTimelineFragment extends TweetsListFragment{
-    private TwitterClient client;
 
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //Get the client
-        client = TwitterApplication.getRestClient(); //singleton client
-        //setSwapListener();
     }
 
     //Send an API request to get the timeline json

@@ -13,9 +13,16 @@ import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import cz.msebera.android.httpclient.Header;
 
 public class ProfileActivity extends AppCompatActivity {
+    @BindView(R.id.tvName) TextView tvName;
+    @BindView(R.id.tvTagline) TextView tvTagline;
+    @BindView(R.id.tvFollowers) TextView tvFollowers;
+    @BindView(R.id.tvFollowing) TextView tvFollowing;
+    @BindView(R.id.ivProfileImage) ImageView ivProfileImage;
     TwitterClient client;
     User user;
 
@@ -23,6 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        ButterKnife.bind(this);
         client = TwitterApplication.getRestClient();
         String screenName = getIntent().getStringExtra("screen_name");
 
@@ -50,11 +58,6 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void populateProfileHeader(User user) {
-        TextView tvName = (TextView) findViewById(R.id.tvName);
-        TextView tvTagline = (TextView) findViewById(R.id.tvTagline);
-        TextView tvFollowers = (TextView) findViewById(R.id.tvFollowers);
-        TextView tvFollowing = (TextView) findViewById(R.id.tvFollowing);
-        ImageView ivProfileImage = (ImageView) findViewById(R.id.ivProfileImage);
         tvName.setText(user.getName());
         tvTagline.setText(user.getTagLine());
         tvFollowers.setText(user.getFollowers() + " followers");

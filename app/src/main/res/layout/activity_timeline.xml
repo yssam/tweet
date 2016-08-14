@@ -7,14 +7,6 @@
     android:layout_height="match_parent"
     tools:context="com.codepath.apps.MySimpleTweets.TimelineActivity">
 
-    <!--<fragment
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:id="@+id/fragment_timeline"
-        android:name="com.codepath.apps.MySimpleTweets.Fragments.HomeTimelineFragment"
-        tools:layout="@layout/fragment_tweets_list">
-    </fragment>-->
-
 
     <com.astuetz.PagerSlidingTabStrip
         android:id="@+id/tabs"
@@ -29,6 +21,18 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tabs"
         android:background="@android:color/white" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fabNewPost"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_border_color_black_24dp"
+        app:fabSize="normal"
+        android:layout_alignBottom="@id/viewpager"
+        android:layout_alignRight="@id/viewpager"
+        app:layout_behavior="com.codepath.apps.MySimpleTweets.ScrollAwareFABBehavior" />
+
 
     <FrameLayout
         android:id="@+id/fmNewPost"

@@ -2,6 +2,7 @@
 package com.codepath.apps.MySimpleTweets.Fragments;
 
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.RecyclerView;
 import butterknife.Unbinder;
 import butterknife.internal.Finder;
 import com.codepath.apps.MySimpleTweets.R;
@@ -15,6 +16,7 @@ public class TweetsListFragment_ViewBinding<T extends TweetsListFragment> implem
   public TweetsListFragment_ViewBinding(T target, Finder finder, Object source) {
     this.target = target;
 
+    target.rvTweets = finder.findRequiredViewAsType(source, R.id.rvTweets, "field 'rvTweets'", RecyclerView.class);
     target.swipeContainer = finder.findRequiredViewAsType(source, R.id.swipeContainer, "field 'swipeContainer'", SwipeRefreshLayout.class);
   }
 
@@ -23,6 +25,7 @@ public class TweetsListFragment_ViewBinding<T extends TweetsListFragment> implem
     T target = this.target;
     if (target == null) throw new IllegalStateException("Bindings already cleared.");
 
+    target.rvTweets = null;
     target.swipeContainer = null;
 
     this.target = null;
