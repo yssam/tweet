@@ -44,6 +44,7 @@ public class HomeTimelineFragment extends TweetsListFragment{
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray json) {
                 ArrayList<Tweet> tmpTweets = new ArrayList<Tweet>(Tweet.fromJSONArray(json));
+                Log.d("DEBUG", json.toString());
                 for(Tweet t:tmpTweets){
                     localLargeId = Math.max(localLargeId, t.getUid());
                     MinId = (page==0)? t.getUid():Math.min(MinId, t.getUid());

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/menu/menu_timeline.xml",
+        "source": "/Users/Sam/Documents/tweet/app/src/main/res/menu/menu_timeline.xml"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/menu/login.xml",
         "source": "/Users/Sam/Documents/tweet/app/src/main/res/menu/login.xml"
     }

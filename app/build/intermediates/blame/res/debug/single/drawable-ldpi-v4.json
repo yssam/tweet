@@ -1,5 +1,9 @@
 [
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/common_ic_googleplayservices.png",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/9.2.1/res/drawable-ldpi-v4/common_ic_googleplayservices.png"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable-ldpi-v4/ic_clear_black_24dp.png",
         "source": "/Users/Sam/Documents/tweet/app/build/generated/res/pngs/debug/drawable-ldpi/ic_clear_black_24dp.png"
     },

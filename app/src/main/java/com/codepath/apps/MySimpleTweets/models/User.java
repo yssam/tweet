@@ -26,10 +26,27 @@ public class User {
         return screenName;
     }
 
+    public int getFollowers() {
+        return followers;
+    }
+
+    public int getFollowing() {
+        return following;
+    }
+
+    public String getTagLine() {
+        return tagLine;
+    }
+
     private String name;
     private long id;
     private String screenName;
     private String profileImageUrl;
+    private String tagLine;
+    private int followers;
+    private int following;
+
+
 
     // deserialize the user json => User
     public static User fromJSON(JSONObject json){
@@ -59,6 +76,27 @@ public class User {
             u.profileImageUrl = " ";
             e.printStackTrace();
         }
+
+        try {
+            u.followers = json.getInt("followers_count");
+        } catch (JSONException e) {
+            u.followers = 0;
+            e.printStackTrace();
+        }
+        try {
+            u.following = json.getInt("friends_count");
+        } catch (JSONException e) {
+            u.following = 0;
+            e.printStackTrace();
+        }
+        try {
+            u.tagLine = json.getString("description");
+        } catch (JSONException e) {
+            u.tagLine = "";
+            e.printStackTrace();
+        }
+
+
         // Return a user
         return u;
     }
