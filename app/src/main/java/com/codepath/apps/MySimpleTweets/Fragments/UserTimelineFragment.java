@@ -2,7 +2,6 @@ package com.codepath.apps.MySimpleTweets.Fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.Log;
 
 import com.codepath.apps.MySimpleTweets.TwitterApplication;
@@ -23,11 +22,6 @@ import cz.msebera.android.httpclient.Header;
 
 public class UserTimelineFragment extends TweetsListFragment {
     private TwitterClient client;
-    private long MinId = 1;
-    private long LargeId = 1;
-    private long localLargeId = 1;
-    private boolean first = true;
-    private SwipeRefreshLayout swipeContainer;
 
 
     @Override
@@ -36,7 +30,6 @@ public class UserTimelineFragment extends TweetsListFragment {
         //Get the client
         client = TwitterApplication.getRestClient(); //singleton client
         //setSwapListener();
-        populateTimeline(0);
     }
 
     // Creates a new fragment given an int and title
@@ -51,7 +44,7 @@ public class UserTimelineFragment extends TweetsListFragment {
 
     //Send an API request to get the timeline json
     //Fill the listview by creating the tweet objects from the json
-    private void populateTimeline(final int page) {
+    public void populateTimeline(final int page) {
         String screen_name = getArguments().getString("screen_name");
         client.getUserTimeline(screen_name, MinId, LargeId, page, new JsonHttpResponseHandler() {
             //SUCCESS
@@ -73,7 +66,7 @@ public class UserTimelineFragment extends TweetsListFragment {
 
                 adapterNotifyDataSetChanged();
                 Log.d("DEBUG", json.toString());
-                //  swipeContainer.setRefreshing(false);
+                swipeContainer.setRefreshing(false);
             }
 
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -19,19 +20,25 @@ import com.codepath.apps.MySimpleTweets.models.Tweet;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * Created by Sam on 8/11/16.
  */
 
-public class TweetsListFragment extends Fragment{
+public abstract class TweetsListFragment extends Fragment{
 
     private ArrayList<Tweet> tweets;
     private TweetsArrayAdapter aTweets;
     //private ListView lvTweets;
     RecyclerView rvTweets;
     LinearLayoutManager linearLayoutManager;
+    @BindView(R.id.swipeContainer) SwipeRefreshLayout swipeContainer;
+    protected long MinId = 1;
+    protected long LargeId = 1;
+    protected long localLargeId = 1;
+    protected boolean first = true;
 
     // inflation logic
     @Nullable
@@ -44,7 +51,9 @@ public class TweetsListFragment extends Fragment{
         linearLayoutManager = new LinearLayoutManager(getActivity());
         rvTweets.setLayoutManager(linearLayoutManager);
         setScrollListener();
+        setSwapListener();
         setRvListener();
+        populateTimeline(0);
         return v;
     }
 
@@ -67,6 +76,9 @@ public class TweetsListFragment extends Fragment{
     }
 
     public void clear() {
+        MinId = 1;
+        LargeId = 1;
+        localLargeId = 1;
         tweets.clear();
         adapterNotifyDataSetChanged();
     }
@@ -82,10 +94,39 @@ public class TweetsListFragment extends Fragment{
                 // Triggered only when new data needs to be appended to the list
                 // Add whatever code is needed to append new items to the bottom of the list
                 System.out.println("now page = " + page);
-                //populateTimeline(page);
+                populateTimeline(page);
             }
         });
     }
+
+      private void setSwapListener() {
+        // Lookup the swipe container view
+        //swipeContainer = (SwipeRefreshLayout) getActivity().findViewById(R.id.swipeContainer);
+        // Setup refresh listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                // Your code to refresh the list here.
+                // Make sure you call swipeContainer.setRefreshing(false)
+                // once the network request has completed successfully.
+                MinId = 1;
+                LargeId = 1;
+                localLargeId = 1;
+                clear();
+                populateTimeline(0);
+            }
+        });
+        // Configure the refreshing colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+
+    }
+
+    protected abstract void populateTimeline(int page);
+
     public void setRvListener(){
         ItemClickSupport.addTo(rvTweets).setOnItemClickListener(
                 new ItemClickSupport.OnItemClickListener() {
