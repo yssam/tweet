@@ -24,12 +24,20 @@
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_tab_indicator_material.xml"
     },
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/background_tab.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/res/drawable/background_tab.xml"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_btn_colored_material.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_btn_colored_material.xml"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_dialog_material_background.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_google_signin_btn_text_light.xml"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_dark.xml",
@@ -48,8 +56,16 @@
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/drawable/design_fab_background.xml"
     },
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_icon_light.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_icon_light.xml"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_seekbar_track_material.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_icon_dark.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_icon_dark.xml"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_btn_radio_material.xml",
@@ -60,12 +76,24 @@
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_ratingbar_indicator_material.xml"
     },
     {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_text_light.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_text_light.xml"
+    },
+    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_background_transition_holo_light.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_item_background_holo_light.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_google_signin_btn_icon_light.xml"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_textfield_search_material.xml",
@@ -96,12 +124,16 @@
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/design/24.1.1/res/drawable/design_snackbar_background.xml"
     },
     {
-        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
-        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_cab_background_internal_bg.xml"
-    },
-    {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/twitter.png",
         "source": "/Users/Sam/Documents/tweet/app/src/main/res/drawable/twitter.png"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_internal_bg.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_list_selector_holo_light.xml",
@@ -114,6 +146,10 @@
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_cab_background_top_material.xml",
         "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/res/drawable/abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/common_plus_signin_btn_text_dark.xml",
+        "source": "/Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_text_dark.xml"
     },
     {
         "merged": "/Users/Sam/Documents/tweet/app/build/intermediates/res/merged/debug/drawable/abc_spinner_textfield_background_material.xml",

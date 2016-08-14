@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:2:1-46:12
+ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:2:1-50:12
 	package
 		ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:3:5-47
 		INJECTED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml
@@ -24,7 +24,7 @@ ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:8:5-81
 	android:name
 		ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:8:22-78
 application
-ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:10:5-44:19
+ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:10:5-48:19
 MERGED from [com.android.support:appcompat-v7:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/AndroidManifest.xml:23:5-20
@@ -52,6 +52,11 @@ MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/a
 MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-vector-drawable:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:25:5-20
+MERGED from [com.astuetz:pagerslidingtabstrip:1.0.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/AndroidManifest.xml:4:5-19
+MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:14:9-41
@@ -117,6 +122,13 @@ activity#com.codepath.apps.MySimpleTweets.TimelineActivity
 ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:43:9-54
 	android:name
 		ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:43:19-51
+meta-data#com.google.android.gms.version
+ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:45:9-47:69
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:47:13-66
+	android:name
+		ADDED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml:46:13-58
 uses-sdk
 INJECTED from /Users/Sam/Documents/tweet/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.codepath.libraries:android-oauth-handler:1.0.0] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.codepath.libraries/android-oauth-handler/1.0.0/AndroidManifest.xml:7:5-9:41
@@ -150,6 +162,12 @@ MERGED from [com.android.support:support-vector-drawable:24.1.1] /Users/Sam/Docu
 MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:21:5-23:54
 MERGED from [com.jakewharton:butterknife:8.2.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.jakewharton/butterknife/8.2.1/AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:recyclerview-v7:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/24.1.1/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:21:5-23:54
+MERGED from [com.astuetz:pagerslidingtabstrip:1.0.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.astuetz/pagerslidingtabstrip/1.0.1/AndroidManifest.xml:2:5-72
+MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:21:5-23:54
+MERGED from [com.google.android.gms:play-services-appindexing:8.4.0] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:8.4.0] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.4.0] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:support-v4:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/AndroidManifest.xml:21:5-23:54
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:24.1.1] /Users/Sam/Documents/tweet/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/AndroidManifest.xml:23:9-75

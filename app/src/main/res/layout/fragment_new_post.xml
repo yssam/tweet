@@ -2,25 +2,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/material_grey_850"
     tools:context="com.codepath.apps.MySimpleTweets.NewPostFragment">
 
     <!-- TODO: Update blank fragment layout -->
-
-    <EditText
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:id="@+id/etEdit"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_above="@+id/btnPost"
-        android:textColor="#FFFFFF"
-        android:shadowColor="#33b5e5"
-        style="@android:style/Widget.AutoCompleteTextView"
-        android:hint="What's happening..."
-        android:textColorHint="#909090"/>
+        app:counterEnabled="true"
+        app:counterMaxLength="140"
+        >
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:ems="10"
+            android:id="@+id/etEdit"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/btnPost"
+            android:textColor="#FFFFFF"
+            android:shadowColor="#33b5e5"
+            style="@android:style/Widget.AutoCompleteTextView"
+            android:hint="What's happening..."
+            android:textColorHint="#909090"/>
+    </android.support.design.widget.TextInputLayout>
+
 
     <Button
         android:text="Tweet"
