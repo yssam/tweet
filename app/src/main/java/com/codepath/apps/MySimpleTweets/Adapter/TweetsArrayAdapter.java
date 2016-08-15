@@ -1,6 +1,7 @@
 package com.codepath.apps.MySimpleTweets.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.text.format.DateUtils;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.codepath.apps.MySimpleTweets.ProfileActivity;
 import com.codepath.apps.MySimpleTweets.R;
 import com.codepath.apps.MySimpleTweets.models.Tweet;
 import com.codepath.apps.MySimpleTweets.models.ViewHolder1;
@@ -88,9 +90,9 @@ public class TweetsArrayAdapter extends
                 break;
         }
     }
-    private void configureViewHolder1(ViewHolder1 viewHolder, int position) {
+    private void configureViewHolder1(ViewHolder1 viewHolder, final int position) {
         // Get the data model based on position
-        Tweet tweet = mTweets.get(position);
+        final Tweet tweet = mTweets.get(position);
 
         // Set item views based on your views and data model
         TextView tvName = viewHolder.getTvName();
@@ -105,11 +107,21 @@ public class TweetsArrayAdapter extends
         tvRelativeTime.setText(getRelativeTimeAgo(tweet.getCreateAt()));
         ivProfileImage.setImageResource(android.R.color.transparent); // clear out the old image for a recycled view
         Picasso.with(getContext()).load(tweet.getUser().getProfileImageUrl()).into(ivProfileImage);
+        ivProfileImage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Toast.makeText(getContext(), "image clicked", Toast.LENGTH_SHORT).show();
+                String screenName = tweet.getUser().getScreenName();
+                Intent i = new Intent(getContext(), ProfileActivity.class);
+                i.putExtra("screen_name", screenName);
+                getContext().startActivity(i);
+            }
+        });
     }
 
     private void configureViewHolder2(ViewHolder2 viewHolder, int position) {
         // Get the data model based on position
-        Tweet tweet = mTweets.get(position);
+        final Tweet tweet = mTweets.get(position);
 
         // Set item views based on your views and data model
         TextView tvName = viewHolder.getTvName();
@@ -125,6 +137,16 @@ public class TweetsArrayAdapter extends
         tvRelativeTime.setText(getRelativeTimeAgo(tweet.getCreateAt()));
         ivProfileImage.setImageResource(android.R.color.transparent); // clear out the old image for a recycled view
         Picasso.with(getContext()).load(tweet.getUser().getProfileImageUrl()).into(ivProfileImage);
+        ivProfileImage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                //Toast.makeText(getContext(), "image clicked", Toast.LENGTH_SHORT).show();
+                String screenName = tweet.getUser().getScreenName();
+                Intent i = new Intent(getContext(), ProfileActivity.class);
+                i.putExtra("screen_name", screenName);
+                getContext().startActivity(i);
+            }
+        });
         Picasso.with(getContext()).load(tweet.getMedia().getMediaUrl()).into(ivUrlImage);
     }
 

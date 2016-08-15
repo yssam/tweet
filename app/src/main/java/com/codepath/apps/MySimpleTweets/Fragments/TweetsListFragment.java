@@ -58,7 +58,7 @@ public abstract class TweetsListFragment extends Fragment{
         rvTweets.setLayoutManager(linearLayoutManager);
         setScrollListener();
         setSwapListener();
-        setRvListener();
+        //setRvListener();
         populateTimeline(0);
         return v;
     }
